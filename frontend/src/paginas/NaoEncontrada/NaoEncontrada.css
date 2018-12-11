@@ -1,0 +1,17 @@
+
+.nao-encontrada {
+    padding: 1.5rem 1rem 0;
+    text-align: center;
+  }
+  
+  .nao-encontrada__simbolo {
+    color: #228B22;
+    font-size: 5rem;
+    margin: 1rem 0 0;
+  }
+  
+  @media (min-width: 992px) {
+    .nao-encontrada {
+        padding: 3rem 10% 0;
+    }
+  }

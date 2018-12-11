@@ -1,0 +1,90 @@
+.react-swipeable-view-container {
+    filter: grayscale(50%);
+}
+
+.styles_modal__gNwvD{
+    width: 800px;
+    height: 580px;
+}
+
+.carousel .slide .legend{
+    bottom:80px;
+    font-size:20px;
+}
+.contato__botao {
+    filter: opacity(50%);
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:38%;
+    left:95%;
+    
+}
+.contato__botao p {
+    position: absolute;
+    font-size:0.8rem;
+    left:-13%;
+    top:45%;
+    font-weight:bold;
+  } 
+
+.quemSomos__botao {
+    filter: opacity(50%);
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:38%;
+    margin-left:1%;
+}
+
+.quemSomos__botao p {
+    position: absolute;
+    font-size:0.8rem;
+    left:4%;
+    top:45%;
+    font-weight:bold;
+}
+
+.cadastro__botao {
+    filter: opacity(45%);
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:86%;
+    left:46%;
+}
+
+.cadastro__botao p {
+    margin-top:-15%;
+    font-size:0.8rem;
+    top:40%;
+    text-align: center;
+    font-weight:bold;
+}
+
+.thumbs-wrapper {
+    display: none;
+}
+
+.carousel-status {
+    display: none;
+}
+
+.control-dots {
+    display: none;
+}  
+
+/*
+.control-arrow {
+    display: none;
+}
+*/

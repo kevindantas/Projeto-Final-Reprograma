@@ -1,0 +1,11 @@
+.home {
+    min-height: calc(100vh - 60px);
+    position: relative;
+    padding: 4.5rem 2rem 0;
+    padding-left: 12%;
+    padding-right: 12%;
+    background-color: rgba(5, 5, 5, 0.3); 
+    text-align:center;  
+  }
+    
+

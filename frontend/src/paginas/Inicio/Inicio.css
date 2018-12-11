@@ -1,0 +1,14 @@
+
+.cadastro__botao {
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    z-index: 3;
+}
+
+.quemSomos__botao {
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    z-index: 3;
+}

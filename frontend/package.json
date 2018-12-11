@@ -1,0 +1,32 @@
+{
+  "name": "alimentando-vidas",
+  "version": "1.0.0",
+  "description": "Projeto Alimentando Vidas",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-flippy": "^0.1.2",
+    "react-icons": "^3.2.2",
+    "react-redux": "^6.0.0",
+    "react-responsive-carousel": "^3.1.43",
+    "react-responsive-modal": "^3.5.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.0.5",
+    "react-swipeable-routes": "^0.4.1",
+    "react-swipeable-views": "^0.13.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,8 @@
+.link {
+    font-size: 20px;
+    cursor: pointer;
+    color: #B8860B;
+    text-align: center;
+    text-decoration: underline;
+    display: block;
+  }

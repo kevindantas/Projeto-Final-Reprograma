@@ -1,0 +1,44 @@
+.perfil{
+    padding: 2rem 2rem 0;
+    padding-left: 12%;
+    padding-right: 12%;
+    background-color: rgba(5, 5, 5, 0.1); 
+    text-align:center;  
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color:white;
+    margin-top:7%;
+    border-radius:10px;
+}
+
+.instituicao {
+        font-size: 1rem;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding: 0.6rem;
+        margin: 0 0 1rem;
+        border: 1px solid black;
+        border-radius: 5px; 
+}
+
+.perfil__botao-concluir {
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: auto;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 20%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background: rgb(245, 113, 5);
+  border: 1px solid rgb(194, 95, 13);
+  border-radius: 5px;
+}
+
+.postit__botao-remover {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: auto;
+}

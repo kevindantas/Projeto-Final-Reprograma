@@ -1,0 +1,20 @@
+.caixa-texto {
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0 0 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .caixa-texto:focus {
+    outline: none;
+    border-color: rgb(253, 103, 3);
+    box-shadow: 0 0 10px rgb(250, 121, 0);
+  }
+
+  .campo__erro {
+    color: red;
+  }

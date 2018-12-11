@@ -1,0 +1,35 @@
+.contato {
+    position: relative;
+    padding: 4.5rem 2rem 0;
+    padding-left: 12%;
+    padding-right: 12%;
+    background-color: rgba(5, 5, 5, 0.3); 
+  
+  }
+
+.contato__titulo {
+    text-align:center;  
+}
+
+.mensagem {
+  width: 100%;
+  margin-bottom:1%;
+}
+  .contatos__botao {
+    position: absolute;
+    filter: opacity(50%);
+    color: white;
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    top:38%;
+    cursor: pointer;
+} 
+
+.contatos__botao p {
+  position: absolute;
+  font-size:0.8rem;
+  left:20%;
+  top:50%;
+  font-weight:bold;
+} 
