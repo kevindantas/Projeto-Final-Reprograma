@@ -29,18 +29,18 @@ app.use(express.json());
 app.use('/api/users', usersRoute);
 
 app.post('/api/login', (req, res) => {
-  authenticatesUser(req.body, (error, user) => {
+  authenticatesUser(req.body, (error, dados) => {
     let token;
 
     if (error) {
       return res.status(error.code).send(error.message);
     }
 
-    token = jwt.sign({ id: user.id }, process.env.SECRET, {
+    token = jwt.sign({ id: dados.id }, process.env.SECRET, {
       expiresIn: 3000
     });
 
-    res.send({ auth: true, token, user });
+    res.send({ auth: true, token, dados });
   });
 });
 
