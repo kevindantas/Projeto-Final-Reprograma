@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import Perfil from '../../componentes/Perfil/Perfil'
-import Home from '../Home/Home'
 import { cadastraUsuario } from '../../redux/actions'
 import Link from '../../componentes/Link/Link'
 import Botao from '../../componentes/Botao/Botao'
@@ -23,7 +21,6 @@ class Cadastro extends Component {
 
   enviaDados = (evento) => {
     evento.preventDefault()
-
     const campoNome = this.nomeRef.current
     const campoEmail = this.emailRef.current
     const campoSenha = this.senhaRef.current
@@ -35,6 +32,11 @@ class Cadastro extends Component {
     }
   
     this.props.cadastraUsuario(dados)
+      // Adicionar esse .then pra quando cadastrar redirecionar para a home
+      // Obs: Como na sua action de cadastrar vc tbm faz o login, esse then só vai ser chamado dps q vc fizer o login
+      .then(() => {
+        this.props.history.push('/') 
+      });
   }
   
   
@@ -67,9 +69,9 @@ class Cadastro extends Component {
           <Legenda htmlFor="senha">Senha:</Legenda>
 
           <Campo ref={this.senhaRef} id="senha" type="password" name="senha" placeholder="Senha" required minLength={6} onChange={this.habilitaOuDesabilita} />
-          <NavLink to="/login">
+          
           <Botao desabilitado={this.state.desabilitado}>Enviar </Botao>
-          </NavLink>
+    
           <Link url="/login">Fazer login</Link>
         </form>
       </main>

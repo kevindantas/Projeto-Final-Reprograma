@@ -20,7 +20,9 @@ export function logaUsuario(dados) {
       email: dados.email,
       senha: dados.senha
     }
-    api
+      // Adicionar o return pra depois quando der o dispatch na action
+    // a gente poder ter acesso ao .then que é chamado qnd acabar de fazer a requisicao
+    return api
       .post('/login', json)
       .then(response => {
         api.defaults.headers.common['x-access-token'] = response.data.token
@@ -32,7 +34,7 @@ export function logaUsuario(dados) {
       })
   }
 }
- //fazer outro put igual para direcionar para rota querocontribuir igual o de cima
+
 export function cadastraUsuario(dados) {
   return (dispatch) => {
     const json = {
@@ -41,10 +43,12 @@ export function cadastraUsuario(dados) {
       senha: dados.senha
     }
 
-    api
+        // Dando o return nessa requisicao aqui
+    // O componente vai ter acesso ao .then que é chamado dps de acabar a requisição
+    return api
       .post('/users', json)
       .then(() => {
-        dispatch(logaUsuario(dados))
+        return dispatch(logaUsuario(dados))
       })
   }
 }
@@ -73,33 +77,43 @@ export function alteraPerfil(dados) {
   }
 }
 
-export function listaPerfil(dados) {
+export function listaPerfil() {
   return (dispatch) => {
-    const url = `/users/${dados.id}`
-    
     api
-    .get(url)
-    .then(response => {
-      const dados = response.data.map(item => ({
-        id: item._id,
-        nome: item.nome,
-        email: item.email,
-        endereco: dados.endereco,
-        telefone: dados.telefone,
-        cidade: dados.cidade
+      .get('/users')
+      .then(response => {
+        const dados = response.data.map(item => ({
+          id: item._id,
+          nome: item.nome,
+          email: item.email,
+          endereco: item.endereco,
+          telefone: item.telefone,
+          cidade: item.cidade
         }
         ))
-        dispatch({ type: 'LISTA_USUARIO', dados })
+        dispatch({ type: 'LISTA_USUARIOs', dados })
       })
-    }
   }
-  export function removePerfil(id) {
-    return (dispatch) => {
-      const url = `/users/${id}`
-      api
-        .delete(url)
-        .then(() => {
-          dispatch({ type: 'REMOVE_USUARIO', id })
-        })
-    }
+}
+
+export function listaUmUsuario(id) {
+  return (dispatch) => {
+    const url = `/users/${id}`
+    api
+      .get(url)
+      .then(() => {
+        dispatch({ type: 'LISTA_USUARIO', id })
+      })
   }
+}
+
+export function removePerfil(id) {
+  return (dispatch) => {
+    const url = `/users/${id}`
+    api
+      .delete(url)
+      .then(() => {
+        dispatch({ type: 'REMOVE_USUARIO', id })
+      })
+  }
+}

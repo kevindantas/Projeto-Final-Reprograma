@@ -23,6 +23,8 @@ function usuario(state = usuarioInicial, action) {
       )
     case 'REMOVE_USUARIO':
       return state.filter(item => item.id !== action.id)
+    case 'LISTA_USUARIOs':
+      return action.dados
     case 'LISTA_USUARIO':
       return action.dados
     default:
@@ -32,6 +34,6 @@ function usuario(state = usuarioInicial, action) {
 
 
 
-const reducers = combineReducers({ usuario})
+const reducers = combineReducers({ usuario })
 
 export default reducers

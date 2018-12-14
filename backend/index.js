@@ -1,7 +1,6 @@
 require('dotenv-safe').load();
 const jwt = require('jsonwebtoken');
 const express = require('express');
-const perfilsRoute = require('./perfils/routes.js');
 const usersRoute = require('./users/routes.js');
 const users = require('./users/users.js');
 const app = express();

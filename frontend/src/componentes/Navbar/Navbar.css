@@ -8,8 +8,9 @@
   }
   
   .navbar__logo {
+    position:fixed;
     display: flex; 
-    width: 86%;
+    width: 20%;
     
   }
   

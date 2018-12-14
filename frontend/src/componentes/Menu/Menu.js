@@ -20,38 +20,43 @@ class Menu extends Component {
                     {this.props.usuario && (
                         <li>
                             <NavLink to="/quem-somos" activeClassName="navbar-menu__opcoes--ativo" onClick={this.abreOuFechaMenu}>
-                                Quem somos
-                            </NavLink>
-                        </li>
-                    )}
-                    {this.props.usuario && (
-                        <li>
-                            <NavLink to="/contato" activeClassName="navbar-menu__opcoes--ativo" onClick={this.abreOuFechaMenu}>
-                                Contato
+                                Como Funciona
                             </NavLink>
                         </li>
                     )}
 
                     {this.props.usuario ? (
                         <li>
-                            <NavLink to="/login" activeClassName="navbar-menu__opcoes--ativo" onClick={this.sair}>
-                                Sair
+                            <NavLink to="/contato" activeClassName="navbar-menu__opcoes--ativo" onClick={this.abreOuFechaMenu}>
+                                Contato
                             </NavLink>
                         </li>
                     ) : (
-                            <li>
-                            <NavLink to="/login"  onClick={this.props.login}>
+                        <li>
+                            <NavLink to="/login">
                                 <button className="navbar-menu__botao--ativo ">
                                     Sou Instituição
                                 </button>
                             </NavLink>
-                            </li>
-                        )}
-                             <li>
-                                 <button className="navbar-menu__botao--ativo ">
+                        </li>
+                    )}
+
+                    {this.props.usuario ? (
+                        <li>
+                            <NavLink to="/inicio" activeClassName="navbar-menu__opcoes--ativo" onClick={this.sair}>
+                                Sair
+                            </NavLink>
+                        </li>
+                    ) : (
+                        <li>
+                            <NavLink to="/quero-contribuir">
+                                <button className="navbar-menu__botao--ativo ">
                                     Quero Contribuir
-                                 </button>
-                             </li>
+                                </button>
+                            </NavLink>
+                        </li>
+                    )}
+
                 </ul>
             </nav>
         )

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { listaPerfil} from '../../redux/actions'
-import Perfil from '../../componentes/Perfil/Perfil'
+import Home from '../Home/Home'
 import './QueroContribuir.css'
 
 class QueroContribuir extends Component {
@@ -11,32 +10,30 @@ class QueroContribuir extends Component {
   }
 
   componentDidMount() {
-    if (this.props.usuario) {
       this.props.listaPerfil()
-    }
   }
 
   render() {
-    if (!this.props.usuario) {
-      return <Redirect to="/inicio" />
-    }
-
     return (
       <main className="contribuir">
-          <Perfil />
+         <h2>Instituições Cadastradas</h2>
+              <div>
+                <Home/>
+
               <div>
                 {this.props.users.map(user => (
-                  <Perfil 
-                    key={user.id}
-                    id={user.id}
+                  <Home 
+                  key={user._id}
+                  id={user._id}
                     nome={user.nome}
                     email={user.email}
                     endereco={user.endereco}
                     telefone={user.telefone}
                     cidade={user.cidade}
                   />
-                ))}
+                  ))}
               </div>
+                  </div>
       
       </main>
     )
