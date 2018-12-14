@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { cadastraUsuario, alteraPerfil, removePerfil } from '../../redux/actions'
+import { cadastraUsuario, alteraPerfil, removePerfil, listaUmUsuario } from '../../redux/actions'
 import { connect } from 'react-redux'
 import './Home.css'
 
@@ -57,6 +57,7 @@ class Home extends Component {
     render() {
        
         const cadastrando = !this.props.id
+        console.log(this.props.usuario)
 
         return (
             <div className="editar-perfil">
@@ -70,7 +71,7 @@ class Home extends Component {
                     type="text"
                     placeholder="Nome da Instituição"
                     autoComplete="off"
-                    value={this.props.nome}
+                    value={this.props.usuario.nome}
                     
                 />
                 <input
@@ -79,7 +80,7 @@ class Home extends Component {
                     name="email"
                     placeholder="Email"
                     autoComplete="off"
-                    defaultValue={this.props.email}
+                    defaultValue={this.props.usuario.email}
                     />
 
                 <input
@@ -88,7 +89,7 @@ class Home extends Component {
                     name="telefone"
                     placeholder="Telefone"
                     autoComplete="off"
-                    defaultValue={this.props.telefone}
+                    defaultValue={this.props.usuario.telefone}
                 />
 
                 <input
@@ -97,7 +98,7 @@ class Home extends Component {
                     name="cidade"
                     placeholder="Cidade"
                     autoComplete="off"
-                    defaultValue={this.props.cidade}
+                    defaultValue={this.props.usuario.cidade}
                     />
 
                 <input
@@ -106,7 +107,7 @@ class Home extends Component {
                     name="endereco"
                     placeholder="Endereço"
                     autoComplete="off"
-                    defaultValue={this.props.endereco}
+                    defaultValue={this.props.usuario.endereco}
                 />
 
 
@@ -127,7 +128,21 @@ class Home extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    // Caso nao tenha nenhum usuario logado
+    // Retorna um objeto vazio usuario
+    if(!state.usuario) {
+        return {
+            usuario: {},
+        };
+    }
+
+    return {
+        usuario: state.usuario.dados,
+    };
+};
+
 export default connect(
-    null,
-    { cadastraUsuario, alteraPerfil, removePerfil }
+    mapStateToProps,
+    { cadastraUsuario, alteraPerfil, removePerfil, listaUmUsuario }
 )(Home)
