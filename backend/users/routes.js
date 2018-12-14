@@ -1,8 +1,8 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const users = require('./users.js');
-const router = express.Router();
 const Joi = require('joi');
+const router = express.Router();
 
 router.use(express.json());
 
@@ -57,7 +57,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-
+  //  const token = req.headers['x-access-token'];
   const newUser = new users({
     nome: req.body.nome,
     email: req.body.email,

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import Perfil from '../../componentes/Perfil/Perfil'
+import Home from '../Home/Home'
 import { cadastraUsuario } from '../../redux/actions'
 import Link from '../../componentes/Link/Link'
 import Botao from '../../componentes/Botao/Botao'
@@ -12,13 +14,12 @@ import './Cadastro.css'
 class Cadastro extends Component {
   constructor(props) {
     super(props)
-
     this.nomeRef = React.createRef()
     this.emailRef = React.createRef()
     this.senhaRef = React.createRef()
-
-    this.state = { desabilitado: true }
+    this.state = { desabilitado: true}
   }
+
 
   enviaDados = (evento) => {
     evento.preventDefault()
@@ -32,10 +33,11 @@ class Cadastro extends Component {
       email: campoEmail.getValor(),
       senha: campoSenha.getValor()
     }
-
+  
     this.props.cadastraUsuario(dados)
   }
-
+  
+  
   habilitaOuDesabilita = () => {
     const campoNome = this.nomeRef.current
     const campoEmail = this.emailRef.current
@@ -49,13 +51,10 @@ class Cadastro extends Component {
   }
 
   render() {
-    if (this.props.usuario) {
-      return <Redirect to="/" />
-    }
-
+   
     return (
       <main className="cadastro">
-        <h1>Conta</h1>
+        <h1>Cadastro</h1>
         <p>Envie o formulário para criar uma conta!</p>
 
         <form onSubmit={this.enviaDados}>
@@ -68,8 +67,9 @@ class Cadastro extends Component {
           <Legenda htmlFor="senha">Senha:</Legenda>
 
           <Campo ref={this.senhaRef} id="senha" type="password" name="senha" placeholder="Senha" required minLength={6} onChange={this.habilitaOuDesabilita} />
-          <Botao desabilitado={this.state.desabilitado} >Enviar </Botao>
-
+          <NavLink to="/login">
+          <Botao desabilitado={this.state.desabilitado}>Enviar </Botao>
+          </NavLink>
           <Link url="/login">Fazer login</Link>
         </form>
       </main>

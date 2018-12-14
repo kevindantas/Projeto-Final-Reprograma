@@ -2,6 +2,8 @@
     display: flex;
     position: fixed;
     z-index: 1;
+    padding: 0 3%;
+    margin-top: 1%;
   
   }
   
@@ -11,10 +13,48 @@
     
   }
   
-  @media (min-width: 992px) {
-    .navbar {
+  @media only screen and (min-width: 600px) and (max-width: 765px) {
+  .navbar{
+    position:absolute;
+    display:fixed;
+    padding: 0 3%;
+    margin-top: 2%;
+
+  }
+  .navbar__logo {
+    position: absolute;
+    display: fixed;
+    width: 20%;
+  }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .navbar{
+      position: absolute;
+      display:fixed;
       padding: 0 3%;
       margin-top: 1%;
     }
+    .navbar__logo {
+      position: absolute;
+      display: fixed;
+      width: 20%;
+    
+    }
   }
   
+  @media only screen and (min-width: 992px) and (max-width:1200px) {
+    .navbar{
+      position: absolute;
+      display:fixed;
+      padding: 0 1%;
+      margin-top: 1%;
+    }
+    .navbar__logo {
+      position: absolute;
+      display: fixed;
+      width: 20%;
+   
+    }
+     }

@@ -9,25 +9,25 @@ import Modal from "react-responsive-modal";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Carousel.css'
 
-  class App extends Component{
-    constructor(props) {
-      super(props)
-      this.state = {
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       open: false
     }
   }
-    onOpenModal = () => {
-      this.setState({ open: true });
-    };
-  
-    onCloseModal = () => {
-      this.setState({ open: false });
-    };
-  
-    render() {
-      const { open } = this.state;
-      return (
-        <div>
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
+  render() {
+    const { open } = this.state;
+    return (
+      <div>
         <div className="tamanho-carousel">
           <Carousel autoPlay>
             <div>
@@ -50,29 +50,29 @@ import './Carousel.css'
             </div>
           </Carousel>
         </div>
-  
+
+        <div>
         <button className="contato__botao" onClick={this.props.abreContato}>
-          <p> Contatos </p>
+          <span>Contato</span>
           <IoIosArrowForward />
         </button>
-  
+
         <button className="quemSomos__botao" onClick={this.props.abreQuemSomos}>
-          <p> Como Funciona </p>
+          <span>Como Funciona</span>
           <IoIosArrowBack />
         </button>
-  
-        <div>
+
           <button className="cadastro__botao" onClick={this.onOpenModal}>
-          <IoIosArrowUp />
-          <p> Cadastre-se </p>
+            <IoIosArrowUp />
+            <span>Cadastre-se</span>
           </button>
           <Modal open={open} onClose={this.onCloseModal} center>
-              <Cadastro />
+            <Cadastro />
           </Modal>
         </div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
-  
-  export default App
+}
+
+export default App

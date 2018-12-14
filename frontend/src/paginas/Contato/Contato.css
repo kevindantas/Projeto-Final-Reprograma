@@ -3,8 +3,6 @@
     padding: 4.5rem 2rem 0;
     padding-left: 12%;
     padding-right: 12%;
-    background-color: rgba(5, 5, 5, 0.3); 
-  
   }
 
 .contato__titulo {
@@ -15,10 +13,10 @@
   width: 100%;
   margin-bottom:1%;
 }
-  .contatos__botao {
+.contatos__botao {
     position: absolute;
     filter: opacity(50%);
-    color: white;
+    color: black;
     font-size: 3rem;
     background: transparent;
     border: none;
@@ -33,3 +31,31 @@
   top:50%;
   font-weight:bold;
 } 
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .contato {
+    display:block;
+  }
+  .contatos__botao{
+    display:none;
+  }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 765px) {
+
+  .contato {
+    display:block;
+  }
+  .contatos__botao{
+    display:none;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width:2000px) {
+  
+}
+   

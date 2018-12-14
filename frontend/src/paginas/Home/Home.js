@@ -9,16 +9,20 @@ import './Home.css'
 class Home extends Component {
   constructor(props) {
     super(props)
-  }
+  //   this.state = {
+  //     dados: [{
+  //         nome:"sabrina"},
+  //         {email:"sa@email.com"
+  //     }]}
+   }
 
 //ira carregar antes do render
   componentDidMount() {
     if (this.props.perfil) {
       this.props.listaPerfil()
+      // this.setState({dados: this.props.alteraState});
     }
   }
-
-
   render() {
     if (!this.props.usuario) {
       return <Redirect to="/inicio" />
@@ -28,7 +32,7 @@ class Home extends Component {
       <main className="home">
             <Perfil />
         
-              <div>
+              <div alteraState>
                 {this.props.perfils.map(perfil => (
                   <Perfil 
                     id={perfil.id}

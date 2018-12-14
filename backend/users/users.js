@@ -1,5 +1,3 @@
-//const postits = require('../postits/postits.js');
-
 let mongoose = require('mongoose');
 
 let Schema =mongoose.Schema;

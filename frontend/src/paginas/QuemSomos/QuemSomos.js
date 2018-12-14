@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import Footer from '../../componentes/Footer/Footer'
-import maos from './maos.png'
 import './QuemSomos.css'
 
 class QuemSomos extends Component {
@@ -12,56 +11,54 @@ class QuemSomos extends Component {
     render() {
         return (
             <main className="menu_quemSomos">
-                <img className="imagem" src={maos}></img>
-                    <h1>COMO FUNCIONA</h1>
+                    <h1>Como Funciona</h1>
                 <div className="quem-somos__texto">
                     <Flippy
                         flipOnHover={false}
                         flipOnClick={true}
                         flipDirection="horizontal"
-                        style={{ width: '400px', height: '400px' }}
                     >
-                        <FrontSide
-                            style={{
-                                border: '1px solid rgb(158, 153, 153)',
-                            }}
-                        >
-                            RICK
+                        <FrontSide className="frontSide">
+                            <span className="textoFrontSide">
+                                PARA &nbsp;&nbsp;INSTITUIÇÕES
+                            </span> 
                         </FrontSide>
-                        <BackSide
-                            style={{
-                                border: '1px solid rgb(158, 153, 153)',
-                            }}>
-
-                            ROCKS
+                        <BackSide className="backSide">
+                        <span className="textoBackSide">
+                          Você que é uma instituição e precisa e aceita
+                          receber doação de comidas que sobram de estabelecimentos. 
+                          Faça seu cadastro e preencha as informações e espere
+                          algum estabelecimento entrar em contato e combinarem o melhor 
+                          para ambos.            
+                        </span>
                         </BackSide>
                     </Flippy>
               
                     <Flippy
                         flipOnHover={false}
                         flipOnClick={true}
-                        flipDirection="horizontal"
-                        ref={(r) => this.flippy = r}
-                        style={{ width: '400px', height: '400px' }}
+                        flipDirection="horizontal"  
                     >
-                        <FrontSide
-                            style={{
-                                border: '1px solid rgb(158, 153, 153)',
-                            }}
-                        >
-                            RICK
+                        <FrontSide className="frontSide">
+                            <span className="textoFrontSide">
+                            PARA ESTABELECIMENTOS
+                            </span>
                         </FrontSide>
-                        <BackSide
-                            style={{
-                                border: '1px solid rgb(158, 153, 153)',
-                            }}>
-
-                            ROCKS
+                        <BackSide className="backSide">
+                            <span className="textoBackSide">
+                            fsdfsfsdffsdfsfsdffsdfsfsdffsdfsfsdf
+                            fsdfsfsdffsdfsfsdffsdfsfsdffsdfsfsdf
+                            fsdfsfsdffsdfsfsdffsdfsfsdffsdfsfsdf
+                            fsdfsfsdffsdfsfsdffsdfsfsdffsdfsfsdf
+                               
+                            </span>
                         </BackSide>
                     </Flippy>
                 </div>
+                <span className="footer">
+                <Footer/>
 
-                <Footer />
+                </span>
                 <button className="Quem-Somos__botao" onClick={this.props.abreCarousel}>
                     <IoIosArrowBack />
                     <p> Voltar </p>

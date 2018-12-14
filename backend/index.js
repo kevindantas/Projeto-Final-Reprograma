@@ -27,7 +27,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.json());
-app.use('/api/perfils', perfilsRoute);
 app.use('/api/users', usersRoute);
 
 app.post('/api/login', (req, res) => {
@@ -46,21 +45,21 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-app.get('/home', (req, res) => {
-  mostrarDados(req.body, (error, id) => {
-    let token;
+// app.get('api/home', (req, res) => {
+//   mostrarDados(req.body, (error, id) => {
+//     let token;
 
-    if (error) {
-      return res.status(error.code).send(error.message);
-    }
+//     if (error) {
+//       return res.status(error.code).send(error.message);
+//     }
 
-    token = jwt.sign({ id }, process.env.SECRET, {
-      expiresIn: 3000
-    });
+//     token = jwt.sign({ id }, process.env.SECRET, {
+//       expiresIn: 3000
+//     });
 
-    res.send({ auth: true, token });
-  });
-});
+//     res.send({ auth: true, token });
+//   });
+// });
 
 function authenticatesUser(authUser, cb) {
   users.findOne({
@@ -75,17 +74,17 @@ function authenticatesUser(authUser, cb) {
   );
 }
 
-function mostrarDados(user, cb) {
-  users.findOne({
-    email: user.email,
-    nome: user.nome
-  }, function (error, response) {
-    if (error) {
-      return cb({ code: 500, message:" "});
-    }
-    return cb(null, response.id);
-  }
-  );
-}
+// function mostrarDados(user, cb) {
+//   users.findOne({
+//     email: user.email,
+//     nome: user.nome
+//   }, function (error, response) {
+//     if (error) {
+//       return cb({ code: 500, message:" "});
+//     }
+//     return cb(null, response.id);
+//   }
+//   );
+// }
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}...`));

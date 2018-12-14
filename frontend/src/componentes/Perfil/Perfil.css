@@ -1,12 +1,12 @@
 .perfil{
-    padding: 2rem 2rem 0;
+    padding: 2rem 2rem 3;
     padding-left: 12%;
     padding-right: 12%;
-    background-color: rgba(5, 5, 5, 0.1); 
+    border:1px solid rgb(158, 153, 153); 
     text-align:center;  
     text-transform: uppercase;
     font-size: 1.3rem;
-    color:white;
+    color:black;
     margin-top:7%;
     border-radius:10px;
 }
@@ -23,6 +23,8 @@
 }
 
 .perfil__botao-concluir {
+  position: relative;
+  left:-40%;
   cursor: pointer;
   text-transform: uppercase;
   margin-left: auto;
@@ -32,13 +34,23 @@
   width: 20%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  background: rgb(245, 113, 5);
-  border: 1px solid rgb(194, 95, 13);
+  background: rgb(19, 182, 4);
+  border: 1px solid rgb(7, 146, 30);
   border-radius: 5px;
 }
 
-.postit__botao-remover {
+.perfil__botao-remover {
+  position:fixed;
+  right:21%;
   cursor: pointer;
-  font-size: 18px;
-  margin-left: auto;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 20%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background: rgb(245, 33, 5);
+  border: 1px solid rgb(199, 14, 14);
+  border-radius: 5px;
 }

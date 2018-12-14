@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { cadastraPerfil, alteraPerfil, removePerfil } from '../../redux/actions'
+import { cadastraUsuario, alteraPerfil, removePerfil } from '../../redux/actions'
 import { connect } from 'react-redux'
 import './Perfil.css'
 
 class Perfil extends Component {
     constructor(props) {
         super(props)
-        this.state = { editando: false }
+        this.state = {
+            editando: false,
+        }
+
     }
 
     cadastraOuAlteraPerfil = (evento) => {
@@ -52,19 +55,22 @@ class Perfil extends Component {
         this.props.removePerfil(id)
     }
 
+
     render() {
         const cadastrando = !this.props.id
 
         return (
             <form className="perfil" onClick={this.habilitaEdicao} onSubmit={this.cadastraOuAlteraPerfil}>
-            <h3>Editar Informações</h3> 
+                <h3>Editar Informações</h3>
+
                 <input
                     className="instituicao"
-                    type="text"
                     name="nome"
+                    type="text"
                     placeholder="Nome da Instituição"
                     autoComplete="off"
-                    defaultValue={this.props.nome}
+                    value={this.props.nome}
+
                 />
                 <input
                     className="instituicao"
@@ -92,7 +98,7 @@ class Perfil extends Component {
                     autoComplete="off"
                     defaultValue={this.props.cidade}
                 />
-                
+
                 <input
                     className="instituicao"
                     type="text"
@@ -109,17 +115,17 @@ class Perfil extends Component {
                     </button>
                 )}
 
-                {!cadastrando && this.state.editando && (
                     <button className="perfil__botao-remover" type="button" onClick={this.removePerfil}>
                         Excluir Cadastro
                     </button>
-                )}
+                
             </form>
+            
         )
     }
 }
 
 export default connect(
     null,
-    { cadastraPerfil, alteraPerfil, removePerfil }
+    { cadastraUsuario, alteraPerfil, removePerfil }
 )(Perfil)

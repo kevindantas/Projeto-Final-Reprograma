@@ -11,6 +11,7 @@ import Contato from './paginas/Contato/Contato'
 import QuemSomos from './paginas/QuemSomos/QuemSomos'
 import Home from './paginas/Home/Home'
 import Inicio from './paginas/Inicio/Inicio'
+import QueroContribuir from './paginas/QueroContribuir/QueroContribuir'
 import './index.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/contato" component={Contato} />
                 <Route path="/quem-somos" component={QuemSomos} />
+                <Route path="/quero-contribuir" component={QueroContribuir} />
                 <Route component={NaoEncontrada} />
             </Switch>
         </div>
@@ -36,4 +38,4 @@ ReactDOM.render(
             <App />
         </BrowserRouter>,
     </Provider>,
-    document.getElementById('projeto'))
+document.getElementById('projeto'))

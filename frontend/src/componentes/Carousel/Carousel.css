@@ -8,14 +8,14 @@
 }
 
 .carousel .slide .legend{
-    bottom:80px;
+    bottom:95px;
     font-size:20px;
 }
 .contato__botao {
+    position: absolute;
     filter: opacity(50%);
     color: white;
-    position: absolute;
-    font-size: 2rem;
+    font-size: 3rem;
     background: transparent;
     border: none;
     cursor:pointer;
@@ -23,19 +23,19 @@
     left:95%;
     
 }
-.contato__botao p {
+.contato__botao span {
     position: absolute;
     font-size:0.8rem;
-    left:-13%;
-    top:45%;
+    left:-1%;
+    top:68%;
     font-weight:bold;
   } 
 
 .quemSomos__botao {
+    position: absolute;
     filter: opacity(50%);
     color: white;
-    position: absolute;
-    font-size: 2rem;
+    font-size:2rem;
     background: transparent;
     border: none;
     cursor:pointer;
@@ -43,30 +43,31 @@
     margin-left:1%;
 }
 
-.quemSomos__botao p {
+.quemSomos__botao span {
     position: absolute;
     font-size:0.8rem;
-    left:4%;
-    top:45%;
+    left:6%;
+    top:68%;
     font-weight:bold;
 }
 
 .cadastro__botao {
+    position:absolute;
     filter: opacity(45%);
     color: white;
-    position: absolute;
-    font-size: 2rem;
+    font-size:3rem;
     background: transparent;
     border: none;
     cursor:pointer;
-    top:86%;
-    left:46%;
+    top:83%;
+    left:47%;
 }
 
-.cadastro__botao p {
-    margin-top:-15%;
+.cadastro__botao span {
+    position: absolute;
+    left:5%;
+    margin-top:55%;
     font-size:0.8rem;
-    top:40%;
     text-align: center;
     font-weight:bold;
 }
@@ -88,3 +89,120 @@
     display: none;
 }
 */
+
+@media only screen and (min-width: 600px) and (max-width: 765px) {
+    .tamanho-carousel{
+      display:none;
+    
+    }
+    .carousel .slide .legend{
+        bottom:20px;
+        font-size:15px;
+    }
+    .contato__botao {
+        display:none;
+    }
+    .quemSomos__botao {
+         display:none;
+    }
+    .cadastro__botao{
+         display:none;
+     }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .tamanho-carousel{
+        display:none;
+      
+    }
+    .carousel .slide .legend{
+          bottom:20px;
+          font-size:15px;
+    }
+    .contato__botao {
+        display:none;
+    }
+    .quemSomos__botao {
+         display:none;
+    }
+    .cadastro__botao{
+         display:none;
+     }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .react-swipeable-view-container {
+        width:100%;
+        height:auto;
+    }     
+    
+.carousel .slide .legend{
+    bottom:50px;
+    font-size:15px;
+}
+.contato__botao {
+    position: absolute;
+    filter: opacity(50%);
+    color: white;
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:30%;
+    left:93%;
+    
+}
+.contato__botao span {
+    position: absolute;
+    font-size:0.8rem;
+    left:-1%;
+    top:68%;
+    font-weight:bold;
+  } 
+
+.quemSomos__botao {
+    position: absolute;
+    filter: opacity(50%);
+    color: white;
+    font-size:2rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:30%;
+    align-items:left;
+}
+
+.quemSomos__botao span {
+    position: absolute;
+    font-size:0.8rem;
+    left:8%;
+    top:68%;
+    font-weight:bold;
+}
+
+.cadastro__botao {
+    position:absolute;
+    filter: opacity(45%);
+    color: white;
+    font-size:2rem;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    top:69%;
+    left:47%;
+}
+
+.cadastro__botao span {
+    position: absolute;
+    left:5%;
+    margin-top:50%;
+    font-size:0.8rem;
+    text-align: center;
+    font-weight:bold;
+}
+
+
+}
+   

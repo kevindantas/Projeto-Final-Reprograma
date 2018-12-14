@@ -6,16 +6,26 @@
     margin-top:0.2rem;
   }
   
-  @media (min-width: 768px) {
+
+  @media only screen and (min-width: 600px) and (max-width: 765px) {
     .cadastro {
-        padding: 1.5rem 10% 0;
-    }
+      padding: 7rem 10% 0;
   }
   
-  @media (min-width: 992px) {
+  }
+ 
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .cadastro {
-        padding:6rem 15% 0;
-    }
+      padding: 7rem 10% 0;
+  }
+
+  }
+   
+  @media only screen and (min-width: 992px) and (max-width:2000px) {
+      
+    .cadastro {
+      padding:7rem 15% 0;
   }
   
+  }
   

@@ -17,33 +17,21 @@ function usuario(state = usuarioInicial, action) {
     case 'DESLOGA_USUARIO':
       localStorage.removeItem('usuario')
       return null
-    default:
-      return state
-  }
-}
-
-function perfils(state = [], action) {
-  switch (action.type) {
-    case 'LISTA_CADASTRO':
-    const cadastro = action.dados
-    const json = JSON.stringify(cadastro)
-    localStorage.setItem('cadastro', json)
-    return cadastro
-    case 'CADASTRA_PERFIL':
-      return state.concat(action.dados)
-    case 'ALTERA_PERFIL':
+    case 'ALTERA_USUARIO':
       return state.map(item =>
         item.id === action.dados.id ? action.dados : item
       )
-    case 'REMOVE_PERFIL':
+    case 'REMOVE_USUARIO':
       return state.filter(item => item.id !== action.id)
-    case 'LISTA_PERFIL':
+    case 'LISTA_USUARIO':
       return action.dados
     default:
       return state
   }
 }
 
-const reducers = combineReducers({ usuario, perfils })
+
+
+const reducers = combineReducers({ usuario})
 
 export default reducers

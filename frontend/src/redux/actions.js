@@ -32,7 +32,7 @@ export function logaUsuario(dados) {
       })
   }
 }
-
+ //fazer outro put igual para direcionar para rota querocontribuir igual o de cima
 export function cadastraUsuario(dados) {
   return (dispatch) => {
     const json = {
@@ -55,62 +55,9 @@ export function deslogaUsuario() {
   }
 }
 
-export function buscaCadastro(dados) {
-  return (dispatch) => {
-    const json = {
-      nome: dados.nome,
-      email: dados.email
-    }
-    api
-      .get('/users', json)
-      .then(response => {
-        dados.id = response.data._id
-        dispatch({ type: 'BUSCA_CADASTRO', dados })
-      })
-  }
-}
-
-
-export function listaCadastro() {
-  return (dispatch) => {
-    api
-      .get('/perfils')
-      .then(response => {
-        const dados = response.data.map(item => ({
-          id: item._id,
-          nome: item.nome,
-          email: item.email,
-          endereco: dados.endereco,
-          telefone: dados.telefone,
-          cidade: dados.cidade
-        }
-        ))
-        dispatch({ type: 'LISTA_CADASTRO', dados })
-      })
-  }
-}
-
-export function cadastraPerfil(dados) {
-  return (dispatch) => {
-    const json = {
-      nome: dados.nome,
-      email: dados.email,
-      endereco: dados.endereco,
-      telefone: dados.telefone,
-      cidade: dados.cidade
-    }
-    api
-      .post('/perfils', json)
-      .then(response => {
-        dados.id = response.data._id
-        dispatch({ type: 'CADASTRA_PERFIL', dados })
-      })
-  }
-}
-
 export function alteraPerfil(dados) {
   return (dispatch) => {
-    const url = `/perfils/${dados.id}`
+    const url = `/users/${dados.id}`
     const json = {
       nome: dados.nome,
       email: dados.email,
@@ -121,37 +68,38 @@ export function alteraPerfil(dados) {
     api
       .put(url, json)
       .then(() => {
-        dispatch({ type: 'ALTERA_PERFIL', dados })
+        dispatch({ type: 'ALTERA_USUARIO', dados })
       })
   }
 }
 
-export function removePerfil(id) {
+export function listaPerfil(dados) {
   return (dispatch) => {
-    const url = `/perfils/${id}`
+    const url = `/users/${dados.id}`
+    
     api
-      .delete(url)
-      .then(() => {
-        dispatch({ type: 'REMOVE_PERFIL', id })
-      })
-  }
-}
-
-export function listaPerfil() {
-  return (dispatch) => {
-    api
-      .get('/perfils')
-      .then(response => {
-        const dados = response.data.map(item => ({
-          id: item._id,
-          nome: item.nome,
-          email: item.email,
-          endereco: dados.endereco,
-          telefone: dados.telefone,
-          cidade: dados.cidade
+    .get(url)
+    .then(response => {
+      const dados = response.data.map(item => ({
+        id: item._id,
+        nome: item.nome,
+        email: item.email,
+        endereco: dados.endereco,
+        telefone: dados.telefone,
+        cidade: dados.cidade
         }
         ))
-        dispatch({ type: 'LISTA_PERFIL', dados })
+        dispatch({ type: 'LISTA_USUARIO', dados })
       })
+    }
   }
-}
+  export function removePerfil(id) {
+    return (dispatch) => {
+      const url = `/users/${id}`
+      api
+        .delete(url)
+        .then(() => {
+          dispatch({ type: 'REMOVE_USUARIO', id })
+        })
+    }
+  }
