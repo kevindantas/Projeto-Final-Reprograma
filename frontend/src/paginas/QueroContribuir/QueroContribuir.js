@@ -1,49 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
-import { listaPerfil} from '../../redux/actions'
-import Perfil from '../../componentes/Perfil/Perfil'
+
+import { listaPerfil } from '../../redux/actions'
+import { Card } from 'semantic-ui-react'
 import './QueroContribuir.css'
 
-class QueroContribuir extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
-    if (this.props.usuario) {
-      this.props.listaPerfil()
-    }
-  }
-
-  render() {
-    if (!this.props.usuario) {
-      return <Redirect to="/inicio" />
-    }
-
-    return (
-      <main className="contribuir">
-          <Perfil />
-              <div>
-                {this.props.users.map(user => (
-                  <Perfil 
-                    key={user.id}
-                    id={user.id}
-                    nome={user.nome}
-                    email={user.email}
-                    endereco={user.endereco}
-                    telefone={user.telefone}
-                    cidade={user.cidade}
-                  />
-                ))}
-              </div>
+    const items = [
+      {
+        header: 'Project Report - April',
+        description: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        meta: 'ROI: 30%',
+      },
+      {
+        header: 'Project Report - May',
+        description: 'Bring to the table win-win survival strategies to ensure proactive domination.',
+        meta: 'ROI: 34%',
+      },
+    ]
+    
+const CardExampleGroupProps = () => <Card.Group items={items} />
       
-      </main>
-    )
-  }
-}
+export default CardExampleGroupProps
 
-export default connect(
-  (state) => ({ usuario: state.usuario }),
-  { listaPerfil, }
-)(QueroContribuir)
+  // componentDidMount() {
+  //   this.props.listaPerfil()
+  // }
+
+  
+
+
+// export default connect(
+//   (state) => ({ usuario: state.usuario }),
+//   { listaPerfil, }
+// )(QueroContribuir)
