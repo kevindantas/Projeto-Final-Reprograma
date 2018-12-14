@@ -29,18 +29,18 @@ app.use(express.json());
 app.use('/api/users', usersRoute);
 
 app.post('/api/login', (req, res) => {
-  authenticatesUser(req.body, (error, id) => {
+  authenticatesUser(req.body, (error, user) => {
     let token;
 
     if (error) {
       return res.status(error.code).send(error.message);
     }
 
-    token = jwt.sign({ id }, process.env.SECRET, {
+    token = jwt.sign({ id: user.id }, process.env.SECRET, {
       expiresIn: 3000
     });
 
-    res.send({ auth: true, token });
+    res.send({ auth: true, token, user });
   });
 });
 
@@ -68,7 +68,7 @@ function authenticatesUser(authUser, cb) {
     if (error) {
       return cb({ code: 500, message: "Usuário ou senha inválido." });
     }
-    return cb(null, response.id);
+    return cb(null, response);
   }
   );
 }
