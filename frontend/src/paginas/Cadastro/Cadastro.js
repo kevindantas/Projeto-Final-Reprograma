@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 import { cadastraUsuario } from '../../redux/actions'
 import Link from '../../componentes/Link/Link'
 import Botao from '../../componentes/Botao/Botao'
@@ -38,7 +37,6 @@ class Cadastro extends Component {
         this.props.history.push('/') 
       });
   }
-  
   
   habilitaOuDesabilita = () => {
     const campoNome = this.nomeRef.current
