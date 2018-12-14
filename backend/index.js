@@ -79,7 +79,7 @@ function mostrarDados(user, cb) {
     nome: user.nome
   }, function (error, response) {
     if (error) {
-      return cb({ code: 500, message:" "});
+      return cb({ code: 500, message:"Error "});
     }
     return cb(null, response.id);
   }

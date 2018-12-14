@@ -1,68 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import { listaPerfil } from '../../redux/actions'
-import Home from '../Home/Home'
+import { Card } from 'semantic-ui-react'
 import './QueroContribuir.css'
 
-class QueroContribuir extends Component {
-  constructor(props) {
-    super(props)
-  }
+    const items = [
+      {
+        header: 'Project Report - April',
+        description: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        meta: 'ROI: 30%',
+      },
+      {
+        header: 'Project Report - May',
+        description: 'Bring to the table win-win survival strategies to ensure proactive domination.',
+        meta: 'ROI: 34%',
+      },
+    ]
+    
+const CardExampleGroupProps = () => <Card.Group items={items} />
+      
+export default CardExampleGroupProps
 
-  componentDidMount() {
-    this.props.listaPerfil()
-  }
+  // componentDidMount() {
+  //   this.props.listaPerfil()
+  // }
 
-  render() {
-    // const cards = () => {
-    //   return users.map(user => {
-    //     return (
-    //       <Home
-    //         key={user._id}
-    //         id={user._id}
-    //         nome={user.nome}
-    //         email={user.email}
-    //         endereco={user.endereco}
-    //         telefone={user.telefone}
-    //         cidade={user.cidade}
-    //       />
-    //     )
-    //   })
-    // }
-    // const contactList = (
-    //   <Card.Group>
-    //     {cards()}
-    //   </Card.Group>
-    // )
-    return (
-      <main className="contribuir">
-        <h2>Instituições Cadastradas</h2>
-        <div>
-          {/* <Home/> */}
+  
 
-          <div>
-            {/* {users.length > 0 && contactList} */}
 
-            {/* {this.props.users.map(user => (
-                  <Home 
-                    key={user._id}
-                    id={user._id}
-                    nome={user.nome}
-                    email={user.email}
-                    endereco={user.endereco}
-                    telefone={user.telefone}
-                    cidade={user.cidade}
-                  />
-                  ))} */}
-          </div>
-        </div>
-
-      </main>
-    )
-  }
-}
-
-export default connect(
-  (state) => ({ usuario: state.usuario }),
-  { listaPerfil, }
-)(QueroContribuir)
+// export default connect(
+//   (state) => ({ usuario: state.usuario }),
+//   { listaPerfil, }
+// )(QueroContribuir)

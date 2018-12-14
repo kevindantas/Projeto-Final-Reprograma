@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import { cadastraUsuario, alteraPerfil, removePerfil } from '../../redux/actions'
 import { connect } from 'react-redux'
 import './Home.css'
@@ -56,9 +55,7 @@ class Home extends Component {
     }
 
     render() {
-        if (!this.props.usuario) {
-          return <Redirect to="/inicio" />
-        }
+       
         const cadastrando = !this.props.id
 
         return (
