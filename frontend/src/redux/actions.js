@@ -20,7 +20,9 @@ export function logaUsuario(dados) {
       email: dados.email,
       senha: dados.senha
     }
-    api
+    // Adicionar o return pra depois quando der o dispatch na action
+    // a gente poder ter acesso ao .then que é chamado qnd acabar de fazer a requisicao
+    return api
       .post('/login', json)
       .then(response => {
         api.defaults.headers.common['x-access-token'] = response.data.token
@@ -41,10 +43,12 @@ export function cadastraUsuario(dados) {
       senha: dados.senha
     }
 
-    api
+    // Dando o return nessa requisicao aqui
+    // O componente vai ter acesso ao .then que é chamado dps de acabar a requisição
+    return api
       .post('/users', json)
       .then(() => {
-        dispatch(logaUsuario(dados))
+        return dispatch(logaUsuario(dados))
       })
   }
 }
